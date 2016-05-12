@@ -2,15 +2,15 @@
 
 Add in your sudoers file:
 
-User_Alias	APACHE = www-data
+    User_Alias	APACHE = www-data
 
-# Cmnd alias specification
+    # Cmnd alias specification
 
-Cmnd_Alias	SAMBA = /usr/bin/smbstatus
+    Cmnd_Alias	SAMBA = /usr/bin/smbstatus
 
-# User privilege specification
-root	ALL=(ALL:ALL) ALL
+    # User privilege specification
+    root	ALL=(ALL:ALL) ALL
 
 
-APACHE	ALL = (ALL) NOPASSWD: SAMBA
+    APACHE	ALL = (ALL) NOPASSWD: SAMBA
 
