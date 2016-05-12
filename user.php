@@ -1,41 +1,38 @@
 <html>
 <head>
-<script type="text/javascript" src="js/jquery-latest.js"></script> 
-<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
-<link rel="stylesheet" href="js/themes/blue/style.css" type="text/css" id="" media="print, projection, screen" />
+    <title>Wamba</title>
+  <script type="text/javascript" src="js/jquery-latest.js"></script> 
+  <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+  <link rel="stylesheet" href="js/themes/blue/style.css" type="text/css" id="" media="print, projection, screen" />
+<link rel="stylesheet" href="style.css" type="text/css" id="wamba" media="print, projection, screen" />
 
-<script type="text/javascript" id="js">
 
-$(document).ready(function() 
-    { 
-        $("#users").tablesorter({
-	sortList: [[0,0]]
-	}); 
-    } 
-); 
-    
-</script>
 </head>
 
 <body>
 
+<?php include('header.php'); ?>
 
 <?php
 
 
-$username=$_GET["username"];
+   $username=$_GET["username"];
+     
+   $cmd = "sudo /usr/bin/smbstatus -u " . $username;
 
-$cmd = "sudo /usr/bin/smbstatus -u " . $username;
+   exec( $cmd ,$log);
 
-exec( $cmd ,$log);
+   echo '<pre>';
 
-echo '<pre>';
-
-for($i=0;$i<sizeof($log);$i++){
+   for($i=0;$i<sizeof($log);$i++){
 	print $log[$i] . PHP_EOL;
-
-}
+   }
 
 echo '</pre>';
 
-?>
+ ?>
+
+<?php include('footer.php'); ?>
+
+   </body>
+</html>

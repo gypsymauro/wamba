@@ -1,49 +1,19 @@
 <html>
-<head>
+  <head>
+    <title>Wamba</title>
 <script type="text/javascript" src="js/jquery-latest.js"></script> 
 <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
 <link rel="stylesheet" href="js/themes/blue/style.css" type="text/css" id="" media="print, projection, screen" />
+<link rel="stylesheet" href="style.css" type="text/css" id="wamba" media="print, projection, screen" />
 
 <script type="text/javascript" id="js">
 
 $(document).ready(function() 
     {
 
-$.tablesorter.addWidget({ 
-    // give the widget a id 
-    id: "repeatHeaders", 
-    // format is called when the on init and when a sorting has finished 
-    format: function(table) { 
-        // cache and collect all TH headers 
-        if(!this.headers) { 
-            var h = this.headers = [];  
-            $("thead th",table).each(function() { 
-                h.push( 
-                    "" + $(this).text() + "" 
-                ); 
-                 
-            }); 
-        } 
-         
-        // remove appended headers by classname. 
-        $("tr.repated-header",table).remove(); 
-         
-        // loop all tr elements and insert a copy of the "headers"     
-        for(var i=0; i < table.tBodies[0].rows.length; i++) { 
-            // insert a copy of the table head every 10th row 
-            if((i%5) == 4) { 
-                $("tbody tr:eq(" + i + ")",table).before( 
-                    $("").html(this.headers.join("")) 
-                 
-                );     
-            } 
-        } 
-    } 
-});
-
         $("#users").tablesorter({
 	sortList: [[0,0]],
-	widgets: ['zebra', 'repeatHeaders'],
+	widgets: ['zebra'],
 	}); 
     } 
 ); 
@@ -52,12 +22,14 @@ $.tablesorter.addWidget({
 </head>
 
 <body>
+<?php include('header.php'); ?>
+
 <?php
 
 $SKIP=4; // numero di righe di intestazione da saltare
 exec("sudo /usr/bin/smbstatus -b",$log);
 
-$num = sizeof($log) - $SKIP; 
+$num = sizeof($log) - $SKIP -2; 
 echo "Totale numero utenti collegati: <b>"  . $num  . "</b>";
 
 echo '<table id="users" class="tablesorter">';
@@ -91,5 +63,9 @@ echo "</table>\n";
 
  
 ?>
+
+
+<?php include('footer.php'); ?>
+   
 </body>
 </html>
