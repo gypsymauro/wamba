@@ -4,3 +4,97 @@ body {
     font-size: 8pt;
     text-align: left;
 }
+
+#header{
+}
+
+
+#nav {
+	width:100%; 
+    display:block;
+    background-color:#64abfb;
+    border: 1px solid #2980b9;
+	}
+
+#nav ul {
+    padding:0;
+    margin:0;
+    list-style: none;
+    position: relative;
+    }
+     
+#nav ul:After {
+	content: "";
+	display:block;
+	clear:both;
+	}	 
+	 
+#nav ul li {
+    display:list-item;
+    list-style: none;
+	float:left;
+    background-color:#64abfb;
+    }
+  
+ #nav ul li i {
+	 font-size:25px;
+	 width:30px;
+	 } 
+  
+#nav ul li a {
+    display:block;
+    padding:15px 30px;  
+     
+    color:#FFF;
+    font-size:20px;
+    text-decoration:none;
+    font-family: 'Bree Serif', 'serif';
+	text-align:center;
+}
+  
+#nav li a:hover { background-color: #2980b9; }
+
+/* The Dropdown Styles */
+/* =================== */
+  
+/* Hide Dropdowns by Default */
+#nav ul ul {
+    display: none;
+    position: absolute; top: 79px;
+}
+     
+/* Display Dropdowns on Hover */
+#nav ul li:hover > ul {
+    display:list-item;
+}
+     
+/* Fisrt Tier Dropdown */
+#nav ul ul li {
+    width:200px;
+    float:none;
+    position: relative;
+    border-bottom:none;
+}
+
+#nav ul ul li i {
+	margin-right:10px;
+	}
+
+#nav ul ul li a {
+    padding:15px 20px;
+	text-align:left;  
+	}
+  
+/* Second, Third and more Tiers */
+nav ul ul ul li {
+    position: absolute relative;
+    top:-79px; 
+    left:200px;
+}
+  
+#nav li > a:after { content: ' »'; }
+   
+#nav > li > a:after {content: ' »'; }
+ 
+#nav li > a:only-child:after {content: ''; }  
+  

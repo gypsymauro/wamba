@@ -24,7 +24,7 @@ $SKIP=4; // numero di righe di intestazione da saltare
 exec("sudo /usr/bin/smbstatus -b",$log);
 
 $num = sizeof($log) - $SKIP -2; 
-echo "Totale numero utenti collegati: <b>"  . $num  . "</b>";
+echo "#: <b>"  . $num  . "</b>";
 
 echo '<table id="users" class="tablesorter">';
 echo '<thead>';

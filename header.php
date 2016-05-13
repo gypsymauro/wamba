@@ -7,11 +7,16 @@
 
 </head>
 
-<center>Wamba - Web Samba!</center>
 
-<div id="header">
-<a href="."><img src="imgs/users.png" border="0" alt="Users"></a>
-<a href="./help.php"><img src="imgs/help.png" border="0" alt="Help"></a>
+
+<div id="nav">
+<center>Wamba - Web Samba!</center>
+<ul>
+<li><a href="."><img src="imgs/users.png" border="0" alt="Users"></a></li>
+<li><a href="./lock.php"><img src="imgs/lock.png" border="0" alt="Lock"></a></li>
+<li><a href="./help.php"><img src="imgs/help.png" border="0" alt="Help"></a></li>
+
+</ul>
 </div>
 
 <body>
