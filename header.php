@@ -1,7 +1,6 @@
 <center>Wamba - Web Samba!</center>
 
-<ul>
-<li>
-<a href=".">Lista utenti </a>
-</li>
-</ul>
+<div id="header">
+<a href="."><img src="imgs/users.png" border="0" alt="Users"> </a>
+<a href="./help.php"><img src="imgs/help.png" border="0" alt="Help"> </a>
+</div>
