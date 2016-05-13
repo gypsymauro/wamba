@@ -1,10 +1,8 @@
-<html>
-  <head>
-    <title>Wamba</title>
+<?php include('header.php'); ?>
+
+
 <script type="text/javascript" src="js/jquery-latest.js"></script> 
 <script type="text/javascript" src="js/jquery.tablesorter.js"></script>
-<link rel="stylesheet" href="js/themes/blue/style.css" type="text/css" id="" media="print, projection, screen" />
-<link rel="stylesheet" href="style.css" type="text/css" id="wamba" media="print, projection, screen" />
 
 <script type="text/javascript" id="js">
 
@@ -19,10 +17,6 @@ $(document).ready(function()
 ); 
     
 </script>
-</head>
-
-<body>
-<?php include('header.php'); ?>
 
 <?php
 
@@ -67,5 +61,3 @@ echo "</table>\n";
 
 <?php include('footer.php'); ?>
    
-</body>
-</html>
