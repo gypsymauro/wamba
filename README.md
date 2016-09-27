@@ -2,11 +2,18 @@
 ## What's wamba
 
 Wamba (Web Samba) it's a simple tool to show connected user to a samba server and some useful informations
-about them (SID, UID and so on) it doesn't needs authentication 'cause it's a read only tool
+and tools:
+* list of the connected users;
+* a VNC protocol link to connect to the users's clients;
+* list of locked files;
+* simple tail of configured log files;
+
+it doens't needs authentication 'cause it's a readonly tool,
+at work we use it to monitor the server where Roaming Profiles and Redirected Folders are stored.
 
 ## How to install
 
-Install php (on Debian: libapache2-mod-php5)
+Install php and sudo (on Debian: apt-get install libapache2-mod-php5 sudo) 
 
 Add in your sudoers file:
 
