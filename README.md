@@ -1,7 +1,7 @@
 # wamba
 ## What's wamba
 
-Wamba (Web Samba) it's a simple tool to show connected user to a samba server and some useful informations
+Wamba (Web Samba) it's a simple WEB GUI to samba's tools (smbstatus and wbinfo), it shows connected user to a samba server and some useful informations
 and tools:
 * list of the connected users;
 * a VNC protocol link to connect to the users's clients;
