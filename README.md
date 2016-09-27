@@ -11,6 +11,10 @@ and tools:
 it doens't needs authentication 'cause it's a readonly tool,
 at work we use it to monitor the server where Roaming Profiles and Redirected Folders are stored.
 
+## What's not wamba
+
+It's not a tool for configuring samba its just for monitoring
+
 ## How to install
 
 Install php and sudo (on Debian: apt-get install libapache2-mod-php5 sudo) 
@@ -26,6 +30,4 @@ Add in your sudoers file:
     # User privilege specification
     root	ALL=(ALL:ALL) ALL
 
-
     APACHE	ALL = (ALL) NOPASSWD: SAMBA
-
