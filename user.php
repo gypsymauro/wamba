@@ -17,12 +17,29 @@
    $uid = $log[1];
  //  print $uid;
 
-
+   $log='';
+   $cmd = "sudo /usr/bin/wbinfo --user-groups  " . $username;
+   exec( $cmd ,$log);
+  
+   $gids = $log;
+   
    print('<b>USERNAME: </b>' . $username);
    print('<br />');
    print('<b>SID: </b>' . $sid);
    print('<br />');
    print('<b>UID: </b>' . $uid);
+   print('<br />');
+   
+   print('<b>GROUPS: </b>' );
+   foreach ($gids as &$gid) {
+
+    $log = '';
+    $cmd = "sudo /usr/bin/wbinfo  --gid-info " . $gid;
+    exec( $cmd ,$log);
+    $group_name =  explode(":", $log[0])[0];
+    print ($gid . ' [' . $group_name . ']');
+    print(', ');
+    }
   
    $cmd = "sudo /usr/bin/smbstatus -u " . $username;
 
