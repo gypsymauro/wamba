@@ -41,7 +41,7 @@ for($i=$SKIP;$i<sizeof($log);$i++)
 	}
 
 	echo "<tr>";
-	echo '<td><a href="user.php?username=' . $user . '">' .  $user . '</a> [ <a href="vnc://' . $client . '"> vnc </a> ]</td>';
+	echo '<td><a href="user.php?username=' . $user . '">' .  $user . '</a> [ <a href="vnc://' . $client . '"> vnc </a> ] [<a href="delparentlock.php?username=' . $user . '"> del parent.lock </a>]</td>' ;
 
 //	echo "<td>" . $group . "</td>";
 	echo '<td><a href="vnc://' . $client . '">' . $client . '</a></td>';
