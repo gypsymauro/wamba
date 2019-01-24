@@ -7,6 +7,7 @@ and tools:
 * a VNC protocol link to connect to the users's clients;
 * list of locked files;
 * simple tail of configured log files;
+* can delete parent.lock file from firefox profile
 
 it doens't needs authentication 'cause it's a readonly tool,
 at work we use it to monitor the server where Roaming Profiles and Redirected Folders are stored.
@@ -25,7 +26,7 @@ Add in your sudoers file:
 
     # Cmnd alias specification
 
-    Cmnd_Alias	SAMBA = /usr/bin/smbstatus, /usr/bin/wbinfo
+    Cmnd_Alias	SAMBA = /usr/bin/smbstatus, /usr/bin/wbinfo , /usr/bin/find,/bin/rm
 
     # User privilege specification
     root	ALL=(ALL:ALL) ALL
