@@ -47,7 +47,7 @@ for($i=$SKIP;$i<sizeof($log);$i++)
 	echo '<td><a href="vnc://' . $client . '">' . $client . '</a></td>';
 	echo "<td>" . $ipv . "</td>";
 	echo "<td>" . $proto . "</td>";
-	echo "<td>" . $pid . "</td>";	
+	echo "<td><a href=\"killsmbprocess.php?pid=" . $pid . "\">" . $pid . "</a></td>";	
 	
 	echo "</tr>";
 }

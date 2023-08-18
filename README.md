@@ -26,7 +26,7 @@ Add in your sudoers file:
 
     # Cmnd alias specification
 
-    Cmnd_Alias	SAMBA = /usr/bin/smbstatus, /usr/bin/wbinfo , /usr/bin/find,/bin/rm
+    Cmnd_Alias	SAMBA = /usr/bin/smbstatus, /usr/bin/wbinfo , /usr/bin/find,/bin/rm, /bin/kill
 
     # User privilege specification
     root	ALL=(ALL:ALL) ALL
