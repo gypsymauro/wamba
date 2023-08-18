@@ -29,7 +29,7 @@ echo "#: <b>"  . $num  . "</b>";
 echo '<table id="users" class="tablesorter">';
 echo '<thead>';
 echo '<tr>';
-echo "<th>user</th><th>client</th><th>tcp/ip</th><th>proto</th><th>pid</th>";
+echo "<th>user</th><th>pid</th><th>client</th><th>tcp/ip</th><th>proto</th>";
 echo '</th>';
 echo '<tbody>';
 for($i=$SKIP;$i<sizeof($log);$i++)
@@ -41,13 +41,14 @@ for($i=$SKIP;$i<sizeof($log);$i++)
 	}
 
 	echo "<tr>";
-	echo '<td><a href="user.php?username=' . $user . '">' .  $user . '</a> [ <a href="vnc://' . $client . '"> vnc </a> ] [<a href="delparentlock.php?username=' . $user . '"> del parent.lock </a>]</td>' ;
+	echo '<td><a href="user.php?username=' . $user . '">' .  $user . '</a> [ <a href="vnc://' . $client . '"> vnc </a> ] [<a href="delparentlock.php?username=' . $user . '"> del Firefox parent.lock </a>]</td>' ;
 
 //	echo "<td>" . $group . "</td>";
+        echo "<td><a href=\"killsmbprocess.php?pid=" . $pid . "\"/>kill -9 </a>" . $pid . "</td>";
+
 	echo '<td><a href="vnc://' . $client . '">' . $client . '</a></td>';
 	echo "<td>" . $ipv . "</td>";
 	echo "<td>" . $proto . "</td>";
-	echo "<td><a href=\"killsmbprocess.php?pid=" . $pid . "\">" . $pid . "</a></td>";	
 	
 	echo "</tr>";
 }
